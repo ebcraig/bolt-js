@@ -8,6 +8,7 @@ export interface SlackCommandMiddlewareArgs {
   payload: SlashCommand;
   command: this['payload'];
   body: this['payload'];
+  headers: this['headers'];
   say: SayFn;
   respond: RespondFn;
   ack: AckFn<string | RespondArguments>;

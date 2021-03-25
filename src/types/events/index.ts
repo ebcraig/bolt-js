@@ -19,6 +19,7 @@ import { SayFn } from '../utilities';
 export interface SlackEventMiddlewareArgs<EventType extends string = string> {
   payload: EventFromType<EventType>;
   event: this['payload'];
+  headers: this['headers'];
   message: EventType extends 'message' ? this['payload'] : never;
   body: EnvelopedEvent<this['payload']>;
   say: WhenEventHasChannelContext<this['payload'], SayFn>;

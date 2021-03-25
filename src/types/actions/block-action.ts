@@ -252,6 +252,7 @@ export interface BlockAction<ElementAction extends BasicElementAction = BlockEle
     id: string;
     name: string;
   };
+  headers: this['headers'];
 }
 
 /*

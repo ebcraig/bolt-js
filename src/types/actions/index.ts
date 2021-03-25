@@ -35,11 +35,12 @@ export type SlackAction = BlockAction | InteractiveMessage | DialogSubmitAction 
  */
 export interface SlackActionMiddlewareArgs<Action extends SlackAction = SlackAction> {
   payload: Action extends BlockAction<infer ElementAction>
-    ? ElementAction
-    : Action extends InteractiveMessage<infer InteractiveAction>
-    ? InteractiveAction
-    : Action;
+  ? ElementAction
+  : Action extends InteractiveMessage<infer InteractiveAction>
+  ? InteractiveAction
+  : Action;
   action: this['payload'];
+  headers: this['headers'];
   body: Action;
   // all action types except dialog submission have a channel context
   say: Action extends Exclude<SlackAction, DialogSubmitAction | WorkflowStepEdit> ? SayFn : never;

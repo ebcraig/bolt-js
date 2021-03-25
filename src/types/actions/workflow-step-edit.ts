@@ -47,4 +47,5 @@ export interface WorkflowStepEdit {
     id: string;
     name: string;
   };
+  headers: this['headers'];
 }

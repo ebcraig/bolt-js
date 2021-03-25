@@ -28,4 +28,5 @@ export interface GlobalShortcut {
     id: string;
     name: string;
   };
+  headers: this['headers'];
 }

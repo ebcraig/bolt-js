@@ -19,6 +19,7 @@ export interface SlackViewMiddlewareArgs<ViewActionType extends SlackViewAction 
   view: this['payload'];
   body: ViewActionType;
   ack: ViewAckFn<ViewActionType>;
+  headers: this['headers'];
 }
 
 interface PlainTextElementOutput {
@@ -55,6 +56,7 @@ export interface ViewSubmitAction {
     id: string;
     name: string;
   };
+  headers: this['headers'];
 }
 
 /**
@@ -85,6 +87,7 @@ export interface ViewClosedAction {
     id: string;
     name: string;
   };
+  headers: this['headers'];
 }
 
 /**

@@ -23,4 +23,5 @@ export interface SlackShortcutMiddlewareArgs<Shortcut extends SlackShortcut = Sl
   say: SayFn;
   respond: RespondFn;
   ack: AckFn<void>;
+  headers: this['headers'];
 }

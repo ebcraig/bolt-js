@@ -66,6 +66,7 @@ export interface InteractiveMessage<Action extends InteractiveAction = Interacti
     id: string;
     name: string;
   };
+  headers: this['headers'];
 }
 
 /*

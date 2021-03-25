@@ -9,6 +9,7 @@ export interface SlackOptionsMiddlewareArgs<Source extends OptionsSource = Optio
   payload: OptionsRequest<Source>;
   body: this['payload'];
   options: this['payload'];
+  headers: this['headers'];
   ack: OptionsAckFn<Source>;
 }
 

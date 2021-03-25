@@ -42,4 +42,5 @@ export interface MessageShortcut {
     id: string;
     name: string;
   };
+  headers: this['headers'];
 }

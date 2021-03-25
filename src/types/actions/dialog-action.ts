@@ -33,6 +33,7 @@ export interface DialogSubmitAction {
     id: string;
     name: string;
   };
+  headers: this['headers'];
 }
 
 /**

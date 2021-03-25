@@ -22,10 +22,10 @@ export interface ExpressReceiverOptions {
   logger?: Logger;
   logLevel?: LogLevel;
   endpoints?:
-    | string
-    | {
-        [endpointType: string]: string;
-      };
+  | string
+  | {
+    [endpointType: string]: string;
+  };
   processBeforeResponse?: boolean;
   clientId?: string;
   clientSecret?: string;
@@ -350,7 +350,7 @@ export function verifySignatureAndParseRawBody(logger: Logger, signingSecret: st
         return res.status(400).send();
       }
     }
-
+    req.body.headers = req.headers;
     return next();
   };
 }
